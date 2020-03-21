@@ -79,11 +79,11 @@ if __name__ == '__main__':
         
         device = torch.device("cuda:0" if opt.cuda else "cpu")
 
-        model_path = "saved_models/travel_cyclegan/latest_net_G_A.pth"
-        if opt.test_model == 'pseudo-pairing-pix2pix':
-            model_path = "saved_models/travel_pix2pix/latest_net_G_A.pth"
-        elif opt.test_model == 'pseudo-pairing-pix2pix-ns':
-            model_path = "saved_models/travel_cyclegan/latest_net_G_A.pth"
+        model_path = opt.model_path #"saved_models/travel_cyclegan/latest_net_G_A.pth"
+        # if opt.test_model == 'pseudo-pairing-pix2pix':
+        #     model_path = "saved_models/travel_pix2pix/latest_net_G_A.pth"
+        # elif opt.test_model == 'pseudo-pairing-pix2pix-ns':
+        #     model_path = "saved_models/travel_cyclegan/latest_net_G_A.pth"
 
         
         net_g = torch.load(model_path).to(device)
