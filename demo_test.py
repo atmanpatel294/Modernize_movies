@@ -111,7 +111,7 @@ if __name__ == '__main__':
 
             if not os.path.exists(os.path.join("result", opt.name)):
                 os.makedirs(os.path.join("result", opt.name))
-            save_img(out_img, "result/{}/{}".format(opt.name, image_name))
-            save_img(img, "result/{}/real_{}".format(opt.name, image_name))
+            save_img(out_img, "result/{}/fake/{}".format(opt.name, image_name))
+            save_img(img, "result/{}/real/{}".format(opt.name, image_name))
 
 # dataroot, name, test_model, model 
