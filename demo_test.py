@@ -81,7 +81,7 @@ if __name__ == '__main__':
 
         model_path = "saved_models/travel_cyclegan/latest_net_G_A.pth"
         if opt.test_model == 'pseudo-pairing-pix2pix':
-            model_path = "saved_models/travel_cyclegan/latest_net_G_A.pth"
+            model_path = "saved_models/travel_pix2pix/latest_net_G_A.pth"
         elif opt.test_model == 'pseudo-pairing-pix2pix-ns':
             model_path = "saved_models/travel_cyclegan/latest_net_G_A.pth"
 
@@ -109,8 +109,8 @@ if __name__ == '__main__':
             out = net_g(input)
             out_img = out.detach().squeeze(0).cpu()
 
-            if not os.path.exists(os.path.join("result", opt.dataset)):
-                os.makedirs(os.path.join("result", opt.dataset))
+            if not os.path.exists(os.path.join("result", opt.name)):
+                os.makedirs(os.path.join("result", opt.name))
             save_img(out_img, "result/{}/{}".format(opt.name, image_name))
             save_img(img, "result/{}/real_{}".format(opt.name, image_name))
 
