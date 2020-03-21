@@ -109,8 +109,10 @@ if __name__ == '__main__':
             out = net_g(input)
             out_img = out.detach().squeeze(0).cpu()
 
-            if not os.path.exists(os.path.join("result", opt.name)):
-                os.makedirs(os.path.join("result", opt.name))
+            if not os.path.exists(os.path.join("result", opt.name, "fake")):
+                os.makedirs(os.path.join("result", opt.name, "fake"))
+            if not os.path.exists(os.path.join("result", opt.name, "real")):
+                os.makedirs(os.path.join("result", opt.name, "real"))
             save_img(out_img, "result/{}/fake/{}".format(opt.name, image_name))
             save_img(img, "result/{}/real/{}".format(opt.name, image_name))
 
